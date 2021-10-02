@@ -58,7 +58,7 @@ a{
     height: calc(100vh - 75px);
     max-height: 720px;
     
-    background-image: url(./images/intro_man.png);
+    background-image: url(../images/intro_man.png);
     background-repeat: no-repeat;
     background-size: contain;
     background-position: -200px;
@@ -160,13 +160,13 @@ h2.title{
     font-size: 13px;
     font-weight: normal;
 }
-.card-text{
+.product-text{
     font-weight: 300;
     font-size: 14px;
     padding-top: 12px;
     padding-bottom: 18px;
 }
-.card-price{
+.product-price{
     font-size: 16px;
     color: #F16D7F;
 }
@@ -179,7 +179,15 @@ h2.title{
     border: 1px solid #FF6A6A;
     background-color: transparent;
     color: #F16D7F;
-    padding: 14px 38px;
+    padding: 14px 40px;
+    max-width: max-content;
+    display: flex;
+    align-items: center;
+    gap: 22px;
+
+    svg path{
+        fill: #F16D7F;
+    }
 }
 
 .featured{
@@ -217,7 +225,7 @@ h2.title{
     padding-bottom: 156px;
     position: relative;
     isolation: isolate;
-    background-image: url(./images/bg-subscribe.jpg);
+    background-image: url(../images/bg-subscribe.jpg);
     background-size: cover;
 }
 .subscribe::before{
@@ -261,7 +269,7 @@ h2.title{
 .subscribe-img{
     margin-bottom: 30px;
 }
-input{
+#email{
     border: none;
     background-color: #E1E1E1;
     padding: 16px 64px 16px 22px;
@@ -289,13 +297,19 @@ footer{
     color: #FBFBFB;
     gap: 8px;
 }
-.media-link{
+.media-link, .btn-swiper{
     display: grid;
     place-items: center;
     box-sizing: border-box;
+    border: none;
     width: 32px;
     height: 32px;
     background-color: #fff;
+}
+.btn-swiper{
+    background-color: #2A2A2A26;
+    width: 47px;
+    height: 47px;
 }
 
 .breadcrumb{
@@ -320,3 +334,140 @@ footer{
     color: #F16D7F;
     font-weight: 700;
 }
+
+.product-swiper{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #F7F7F7;
+    padding-top: 11px;
+    padding-bottom: 42px;
+    border: 1px solid #EAEAEA;
+}
+.recommended-products{
+    margin: 128px 0;
+    margin-top: calc(128px - 65px);
+
+    .cards{
+        margin: 0;
+    }
+}
+.product-description{
+    padding: 65px;
+    text-align: center;
+    border: 1px solid #EAEAEA;
+    transform: translateY(-65px);
+    background-color: #fff;
+
+    .thick{
+        border: 3px solid #EF5B70;
+        background-color: #EF5B70;
+        max-width: 63px;
+        margin: 12px auto;
+    }
+    .thin{
+        border: 1px solid #EAEAEA;
+        max-width: 640px;
+        margin: 65px auto;
+    }
+    .product-text{
+        margin-bottom: 32px;
+    }
+    .btn-outline-primary{
+        margin: auto;
+    }
+    .options{
+        margin-bottom: 48px;
+    }
+}
+.product-title{
+    color: #F16D7F;
+    font-weight: 300;
+    font-size: 14px;
+}
+.product-subtitle{
+    color: #4D4D4D;
+    font-weight: 300;
+    font-size: 18px;
+    margin-bottom: 48px;
+}
+.btn-dropdown{
+    color: #6F6E6E;
+    font-size: 14px;
+    background-color: transparent;
+    border: none;
+    margin-right: 22px;
+
+    img{
+        padding: 2px;
+        padding-left: 9px;
+    }
+}
+
+.cart{
+    margin-top: 96px;
+    margin-bottom: 128px;
+    display: flex;
+    justify-content: space-between;
+}
+.cart-right{
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+.cart-product{
+    display: flex;
+    max-width: max-content;
+    box-shadow: 17px 19px 24px rgba(0, 0, 0, 0.13);
+    
+    .cart-product-img{
+        width: 262px;
+    }
+
+    .cart-product-body{
+        box-sizing: border-box;
+        padding: 22px 32px;
+        display: flex;
+        width: 390px;
+        position: relative;
+
+        p{
+            color: #575757;
+            font-size: 22px;
+            margin-bottom: 6px;
+        }
+
+        .product-price{
+            font-size: 22px;
+        }
+    }
+
+    .cart-product-title{
+        font-weight: normal;
+        font-size: 24px;
+        color: #222222;
+        margin-bottom: 42px;
+    }
+}
+.cart-right{
+    .btn-outline-primary{
+        border-color: #A4A4A4;
+        color: black;
+        font-weight: 300;
+        font-size: 14px;
+    }
+}
+.btn-group{
+    display: flex;
+    justify-content: space-between;
+    padding-top: calc(90px - 49px);
+}
+.btn-close{
+    background-color: transparent;
+    border: none;
+    position: absolute;
+    top: 28px;
+    right: 22px;
+}
+
+
