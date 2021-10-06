@@ -431,10 +431,20 @@ footer{
         width: 390px;
         position: relative;
 
-        p{
+        .cart-text{
             color: #575757;
             font-size: 22px;
             margin-bottom: 6px;
+            display: flex;
+
+            input{
+                display: inline;
+                box-sizing: border-box;
+                padding: 0 14px;
+                font-size: 18px;
+                color: #656565;
+                width: 44px;
+            }
         }
 
         .product-price{
@@ -449,12 +459,22 @@ footer{
         margin-bottom: 42px;
     }
 }
-.cart-right{
+.cart-right, .shipping-info{
     .btn-outline-primary{
         border-color: #A4A4A4;
         color: black;
         font-weight: 300;
         font-size: 14px;
+    }
+}
+
+.shipping-info {
+    input{
+        border: 1px solid #A4A4A4;
+    }
+    .btn-outline-primary{
+        padding: 12px 15px;
+        border: 1px solid #A4A4A4;
     }
 }
 .btn-group{
@@ -469,5 +489,53 @@ footer{
     top: 28px;
     right: 22px;
 }
+.shipping-title{
+    font-weight: 300;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+.shipping-input{
+    font-weight: 300;
+    font-size: 13px;
+    padding: 14px 16px;
+    color: #222222;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+    width: 350px;
+}
 
+.total-info{
+    padding: 44px;
+    background-color: #F5F3F3;
+    text-align: end;
+    margin-top: 57px;
+    
+    hr{
+        border: 1px solid #E2E2E2;
+        margin-top: 21px;
+        margin-bottom: 17px;
+    }
 
+    .btn-primary{
+        border-radius: 0;
+        font-weight: 300;
+        font-size: 16px;
+        color: #FFFFFF;
+        width: 100%;
+    }
+}
+.totla-subtitle{
+    font-size: 11px;
+    font-weight: normal;
+    color: #4A4A4A;
+    margin-bottom: 12px;
+}
+.totla-title{
+    font-weight: 300;
+    font-size: 16px;
+    color: #222222;
+
+    .product-price{
+        font-weight: 700;
+    }
+}
