@@ -149,6 +149,18 @@ h2.title{
 .card{
     box-sizing: border-box;
     flex: 0 0 calc(33.33% - 20px);
+    
+    & .card-body{
+        transition: transform .3s ease-in-out,
+                    box-shadow .3s ease-in-out;
+    }
+
+    &:hover{
+        & .card-body{
+            transform: translateY(-5px);
+            box-shadow: 0px 5px 20px 0px rgba(0, 0, 0, 0.12);
+        }
+    }
 }
 .card-body{
     background-color: #F8F8F8;
@@ -184,9 +196,37 @@ h2.title{
     display: flex;
     align-items: center;
     gap: 22px;
+    position: relative;
+    transition: color .3s ease-in-out;
+
+    &::before{
+        content: '';
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: auto;
+        width: 0px;
+        background-color: #F16D7F;
+        position: absolute;
+        transition: width .3s ease-in-out;
+        z-index: -1;
+    }
+
+    &:hover{
+        color: #fff;
+
+        &::before{
+            width: 100%;
+        }
+
+        svg path{
+            fill: #fff;
+        }
+    }
 
     svg path{
         fill: #F16D7F;
+        transition: fill .3s ease-in-out;
     }
 }
 
@@ -227,6 +267,10 @@ h2.title{
     isolation: isolate;
     background-image: url(../images/bg-subscribe.jpg);
     background-size: cover;
+
+    .btn-primary{
+        border-radius: 0 50px 50px 0;
+    }
 }
 .subscribe::before{
     content: "";
@@ -277,11 +321,16 @@ h2.title{
     font-size: 14px;
 }
 .btn-primary{
-    border: none;
+    border: 1px solid #F16D7F;
     color: #fff;
     background-color: #F16D7F;
-    border-radius: 0 50px 50px 0;
     padding: 16px;
+    transition: all .3s ease-in-out;
+
+    &:hover{
+        background-color: transparent;
+        color: #F16D7F;
+    }
 }
 
 footer{
@@ -305,6 +354,19 @@ footer{
     width: 32px;
     height: 32px;
     background-color: #fff;
+    transition: all .3s ease-in-out;
+}
+.media-link{
+    & img{
+        transition: all .3s ease-in-out;
+    }
+
+    &:hover{
+        background-color: #F16D7F;
+        & img{
+            filter: invert(1);
+        }
+    }
 }
 .btn-swiper{
     background-color: #2A2A2A26;
@@ -465,6 +527,13 @@ footer{
         color: black;
         font-weight: 300;
         font-size: 14px;
+
+        &::before{
+            background-color: #A4A4A4;
+        }
+        &:hover{
+            color: white;
+        }
     }
 }
 
@@ -489,12 +558,12 @@ footer{
     top: 28px;
     right: 22px;
 }
-.shipping-title{
+.shipping-title, .registration-title{
     font-weight: 300;
     font-size: 16px;
     margin-bottom: 20px;
 }
-.shipping-input{
+.shipping-input, .registration-input{
     font-weight: 300;
     font-size: 13px;
     padding: 14px 16px;
@@ -517,11 +586,14 @@ footer{
     }
 
     .btn-primary{
-        border-radius: 0;
         font-weight: 300;
         font-size: 16px;
         color: #FFFFFF;
         width: 100%;
+
+        &:hover{
+            color: #F16D7F;
+        }
     }
 }
 .totla-subtitle{
@@ -537,5 +609,57 @@ footer{
 
     .product-price{
         font-weight: 700;
+    }
+}
+
+.registration{
+    display: flex;
+    gap: 128px;
+    padding-top: 64px;
+    padding-bottom: 96px;
+}
+.choose-sex{
+    padding: 30px 0;
+    display: flex;
+
+    label{
+        font-weight: 300;
+        font-size: 11px;
+        line-height: 13px;
+        color: #000000;
+        margin-right: 20px;
+    }
+}
+.condition{
+    font-weight: 300;
+    font-size: 13px;
+    color: #B1B1B1;
+    margin-bottom: 40px;
+}
+.registration-info-text{
+    font-weight: 300;
+    font-size: 24px;
+    color: #000000;
+
+    &:is(li){
+        margin-bottom: 16px;
+        display: flex;
+        align-items: center;
+        gap: 22px;
+
+        &::before{
+            content: '';
+            display: block;
+            background-image: url(../images/tick.svg);
+            background-position: center;
+            background-size: contain;
+            background-repeat: no-repeat;
+            height: 20px;
+            width: 16px;
+        }
+    }
+
+    &:not(li):nth-child(2){
+        margin: 22px 0;
     }
 }
